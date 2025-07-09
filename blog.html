@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Donaciones - FUDEMPRE</title>
+  <meta name="description" content="Haz tu donativo y ayuda a fomentar el empoderamiento de mujeres y proyectos sostenibles.">
+  <meta name="keywords" content="donativos, fundación, mujeres, economía solidaria">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="donation-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">FUDEMPRE</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="about.html">Sobre Nosotros</a></li>
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="team.html">Equipo</a></li>
+          <li><a href="donations.html" class="active">Donaciones</a></li>
+          <li><a href="contact.html">Contáctanos</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container position-relative">
+        <h1>Haz tu Donativo</h1>
+        <p>Tu apoyo es fundamental para fortalecer la economía solidaria y empoderar a las mujeres de nuestra comunidad.</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Inicio</a></li>
+            <li class="current">Donaciones</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Donation Section -->
+    <section id="donations" class="donations section light-background">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <h3>Haz tu Donativo</h3>
+            <p>Con tu donativo, contribuyes a proyectos que mejoran la vida de mujeres emprendedoras y comunidades en situación vulnerable. ¡Tu apoyo es clave para el cambio!</p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Apoyo a mujeres emprendedoras.</li>
+              <li><i class="bi bi-check-circle"></i> Fomento a la economía solidaria.</li>
+              <li><i class="bi bi-check-circle"></i> Proyectos sostenibles alineados con los ODS.</li>
+            </ul>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <!-- Donation Form -->
+            <form action="donate.php" method="post" class="donation-form">
+              <div class="form-group">
+                <label for="donation-amount">Monto de Donación:</label>
+                <input type="number" name="amount" class="form-control" id="donation-amount" placeholder="Ingresa la cantidad" required>
+              </div>
+              <div class="form-group">
+                <label for="donation-method">Método de Pago:</label>
+                <select name="payment_method" class="form-control" id="donation-method" required>
+                  <option value="credit_card">Tarjeta de Crédito</option>
+                  <option value="paypal">PayPal</option>
+                  <option value="bank_transfer">Transferencia Bancaria</option>
+                </select>
+              </div>
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Donar Ahora</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Donation Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="footer-newsletter">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-6">
+                    <h4>Únete a Nuestro Boletín</h4>
+                    <p>Recibe noticias y actualizaciones sobre nuestros proyectos y cómo puedes apoyar.</p>
+                    <form action="forms/newsletter.php" method="post" class="php-email-form">
+                        <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Suscribirse"></div>
+                        <div class="loading">Cargando</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">¡Gracias por suscribirte!</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Contact Link -->
+    <div class="container text-center mt-4">
+        <a href="https://wa.link/uyfx78" target="_blank" class="whatsapp-icon">
+            <i class="bi bi-whatsapp"></i> Contáctanos por WhatsApp
+        </a>
+    </div>
+</footer><!-- End Footer -->
+
+
+</body>
+
+</html>
