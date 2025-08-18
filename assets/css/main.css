@@ -1687,38 +1687,31 @@ section,
 }
 
 .services .details {
-  background: color-mix(in srgb, var(--surface-color), transparent 5%);
+  background: rgba(255,255,255,0.85); /* Blanco semitransparente */
+  border-radius: 18px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 24px rgba(43,75,140,0.08);
   position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
-  padding: 30px;
-  transition: all ease-in-out 0.3s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
   text-align: center;
-  border-radius: 8px;
-  box-shadow: 0px 0 25px rgba(0, 0, 0, 0.1);
+  z-index: 2;
 }
 
-.services .details h3 {
-  font-weight: 700;
-  margin: 10px 0 15px 0;
-  font-size: 22px;
-  transition: ease-in-out 0.3s;
+.services .service-item {
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
 }
 
-.services .details p {
-  color: color-mix(in srgb, var(--default-color), transparent 10%);
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.services .service-item:hover .details h3 {
-  color: var(--accent-color);
-}
-
-.services .service-item:hover .img img {
-  transform: scale(1.2);
+.services .service-item .img img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
 }
 
 /*--------------------------------------------------------------
@@ -2720,47 +2713,43 @@ section,
 }
 
 .popup-overlay {
+  display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  display: flex;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
 }
 
 .popup-contenido {
-  position: relative;
-  background: white;
+  background: transparent; /* Sin fondo blanco */
   padding: 0;
-  border-radius: 8px;
-  max-width: 90%;
-  max-height: 90%;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  animation: fadeIn 0.5s ease-in-out;
+  border-radius: 16px;
+  box-shadow: none; /* Sin sombra */
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .popup-contenido img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  background: transparent;
 }
 
 .cerrar-popup {
   position: absolute;
-  top: 5px;
-  right: 10px;
-  background: transparent;
+  top: 16px;
+  right: 16px;
+  background: none;
   border: none;
   font-size: 28px;
-  color: #000;
-  cursor: pointer;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  color: #fff;
+  z-index: 2;
 }
