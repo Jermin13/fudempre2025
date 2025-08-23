@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Inicio - FUDEMPRE Bootstrap Template</title>
+    <title>FUDEMPRE</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
@@ -41,42 +41,43 @@
     <!-- Estilos para el Popup -->
     <style>
       .popup-overlay {
-        display: none; /* Inicialmente oculto */
+        display: none;
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-        z-index: 9999; /* Asegura que esté encima de otros elementos */
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
         justify-content: center;
         align-items: center;
       }
       .popup-contenido {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
+        background: transparent !important; /* Elimina fondo blanco */
+        padding: 0 !important;              /* Elimina padding */
+        border-radius: 16px !important;
+        box-shadow: none !important;        /* Elimina sombra */
+        max-width: 600px;
+        width: 90%;
         position: relative;
-        max-width: 500px; /* Limita el ancho del popup */
-        width: 90%; /* Responsivo */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
-      }
-      .cerrar-popup {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        color: #333;
-      }
-      .cerrar-popup:hover {
-        color: #ff0000; /* Cambia de color al pasar el ratón */
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .popup-contenido img {
         max-width: 100%;
         height: auto;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+        background: transparent;
+        display: block;
+      }
+      .cerrar-popup {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        font-size: 28px;
+        color: #fff;
+        z-index: 2;
       }
     </style>
   </head>
@@ -95,203 +96,175 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="about.html">Sobre Nosotros</a></li>
             <li><a href="services.html">Servicios</a></li>
-            <li><a href="team.html">Equipo</a></li>
-            <li><a href="donations.html" class="active">Donaciones</a></li>
+            <li><a href="team.html">Propósito</a></li>
+            <li><a href="donacion.html" class="active">Donaciones</a></li>
             <li><a href="contact.html">Contáctanos</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
       </div>
     </header>
-
-    <main class="main">
       <!-- Hero Section -->
       <section id="hero" class="hero section dark-background">
-        <div
-          id="hero-carousel"
-          class="carousel carousel-fade"
-          data-bs-ride="carousel"
-          data-bs-interval="5000"
-        >
+        <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
           <div class="container position-relative">
-            <div class="carousel-item active">
-              <div class="carousel-container">
-                <h2>
-                  Bienvenido a <br />
-                  FUDEMPRE
-                </h2>
-                <p>
-                  Fundación Emprender y no Depender <br />
-                  Apoyamos el desarrollo de emprendimientos y la inclusión
-                  financiera para un mundo más justo y solidario.
-                </p>
-                <a href="#about" class="btn-get-started">Conoce más</a>
+            <ol class="carousel-indicators">
+              <li data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active"></li>
+
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="carousel-container">
+                  <h2>
+                    Bienvenido a <br />
+                    FUDEMPRE
+                  </h2>
+                  <p>
+                    Fundación Emprender y no Depender <br />
+                    Promoviendo el desarrollo humano integral, la inclusión económica y social en Chimborazo y Ecuador.
+                  </p>
+                  <a href="#identidad" class="btn-get-started">Conoce nuestro plan 2025–2029</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="carousel-container">
+                  <h2>Visión</h2>
+                  <p>
+                    Ser una organización referente nacional en la generación de oportunidades para la movilidad social, la equidad y la restitución de derechos de la población en situación de pobreza, vulnerabilidad y exclusión.
+                  </p>
+                  <a href="#identidad" class="btn-get-started">Ver más</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="carousel-container">
+                  <h2>Crecemos juntas, ahorramos juntas.</h2>
+                  <p>
+                    Te asesoramos para que tu negocio prospere con el apoyo de nuestra comunidad.<br>
+                    ¡Abre tu caja de ahorro y alcanza tus metas!
+                  </p>
+                  <a href="contact.html" class="btn-get-started">👉 Únete ahora</a>
+                  
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="carousel-container">
+                  <h2>Misión</h2>
+                  <p>
+                    Promover el desarrollo humano integral mediante programas de inclusión económica y social, fortaleciendo la economía popular y solidaria, con énfasis en la atención a grupos prioritarios y poblaciones vulnerables.
+                  </p>
+                  <a href="#identidad" class="btn-get-started">Ver más</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="carousel-container">
+                  <h2>🌟 ¡Mujeres emprendedoras!</h2>
+                  <p>
+                    Te ayudamos a producir lo que el mercado necesita.<br>
+                    Participas en cadenas productivas y mejoras tu negocio.<br>
+                    Con nuestro apoyo, tu negocio crece.
+                  </p>
+                  <a href="contact.html" class="btn-get-started">🚜 ¡Únete ahora!</a>
+                  
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="carousel-container">
+                  <h2>Objetivos Estratégicos</h2>
+                  <p>
+                    Inclusión económica y fortalecimiento productivo.<br>
+                    Atención integral durante el ciclo de vida.<br>
+                    Empoderamiento y participación social.<br>
+                    Sostenibilidad institucional y territorialización.
+                  </p>
+                  <a href="#objetivos" class="btn-get-started">Descubre nuestros ejes</a>
+                </div>
               </div>
             </div>
-            <!-- End Carousel Item -->
-
-            <div class="carousel-item">
-              <div class="carousel-container">
-                <h2>¿Quiénes somos?</h2>
-                <p>
-                  En FUDEMPRE, promovemos la inclusión financiera y el
-                  desarrollo económico para fortalecer la economía popular y
-                  solidaria. Impulsamos emprendimientos sostenibles alineados
-                  con los Objetivos de Desarrollo Sostenible 2030.
-                </p>
-                <a href="#about" class="btn-get-started">Conoce más</a>
-              </div>
-            </div>
-            <!-- End Carousel Item -->
-
-            <div class="carousel-item">
-              <div class="carousel-container">
-                <h2>Nuestros Servicios</h2>
-                <p>
-                  En FUDEMPRE ofrecemos soluciones integrales para fortalecer
-                  tus ideas y emprendimientos. Nuestros servicios incluyen:
-                  <br />
-                  Inclusión financiera para emprendedores. <br />
-                  Capacitaciones en economía solidaria <br />
-                  Articulación de redes colaborativas. <br />
-                  Proyectos alineados con los ODS 2030
-                </p>
-                <a href="#about" class="btn-get-started">Conoce más</aregistro
-                <a href="#about" class="btn-get-started">Conoce más</a>
-              </div>
-            </div>
-            <!-- End Carousel Item -->
-
-            <a
-              class="carousel-control-prev"
-              href="#hero-carousel"
-              role="button"
-              data-bs-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon bi bi-chevron-left"
-                aria-hidden="true"
-              ></span>
+            <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
             </a>
-
-            <a
-              class="carousel-control-next"
-              href="#hero-carousel"
-              role="button"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon bi bi-chevron-right"
-                aria-hidden="true"
-              ></span>
+            <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+              <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
             </a>
+          </div>
+        </section>
+      <!-- /Hero Section -->
 
-            <ol class="carousel-indicators"></ol>
+
+      <!-- Nueva sección de Identidad Institucional -->
+      <section id="identidad" class="section light-background">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-12" data-aos="fade-up">
+              <h2>Identidad Institucional</h2>
+              <ul>
+                <li><strong>Razón Social:</strong> Fundación EMPRENDER Y NO DEPENDER – FUDEMPRE</li>
+                <li><strong>Naturaleza Jurídica:</strong> Organización de derecho privado sin fines de lucro, con patrimonio propio y administración autónoma</li>
+                <li><strong>Domicilio Legal:</strong> Provincia de Chimborazo, Ecuador</li>
+                <li><strong>Registro:</strong> Inscrita en el MIES mediante resolución [NÚMERO DE RESOLUCIÓN]</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
-      <!-- /Hero Section -->
+      <!-- /Identidad Institucional -->
 
       <!-- Featured Services Section -->
       <section id="featured-services" class="featured-services section">
         <div class="container">
           <div class="row gy-4">
-            <div
-              class="col-lg-3 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div class="service-item item-cyan position-relative">
                 <div class="icon">
                   <i class="bi bi-activity"></i>
                 </div>
                 <a href="service-details.html" class="stretched-link">
-                  <h3>Inclusión Financiera</h3>
+                  <h3>Inclusión Económica</h3>
                 </a>
                 <p>
-                  Brindamos acceso a herramientas financieras para apoyar la
-                  independencia económica de mujeres y comunidades vulnerables.
+                  Programas de capacitación, acceso a microcréditos y fortalecimiento de la economía popular y solidaria.
                 </p>
               </div>
             </div>
             <!-- End Service Item -->
-
-            <div
-              class="col-lg-3 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
               <div class="service-item item-orange position-relative">
                 <div class="icon">
-                  <i class="bi bi-lightbulb"></i>
+                  <i class="bi bi-people"></i>
                 </div>
                 <a href="service-details.html" class="stretched-link">
-                  <h3>Capacitación y Talleres</h3>
+                  <h3>Atención Integral</h3>
                 </a>
                 <p>
-                  Ofrecemos programas de formación en emprendimientos
-                  sostenibles, liderazgo y desarrollo personal.
+                  Servicios para todas las etapas de la vida, priorizando salud, bienestar y restitución de derechos.
                 </p>
               </div>
             </div>
             <!-- End Service Item -->
-
-            <div
-              class="col-lg-3 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
               <div class="service-item item-teal position-relative">
                 <div class="icon">
-                  <i class="bi bi-easel"></i>
+                  <i class="bi bi-megaphone"></i>
                 </div>
                 <a href="service-details.html" class="stretched-link">
-                  <h3>Redes de Colaboración</h3>
+                  <h3>Empoderamiento Social</h3>
                 </a>
                 <p>
-                  Fomentamos alianzas estratégicas entre empresas, ONGs y
-                  comunidades para potenciar proyectos de impacto social.
+                  Formación de liderazgos, participación de mujeres, jóvenes y personas con discapacidad en la toma de decisiones.
                 </p>
               </div>
             </div>
             <!-- End Service Item -->
-
-            <div
-              class="col-lg-3 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
               <div class="service-item item-purple position-relative">
                 <div class="icon">
                   <i class="bi bi-globe"></i>
                 </div>
                 <a href="service-details.html" class="stretched-link">
-                  <h3>Proyectos Sostenibles</h3>
+                  <h3>Sostenibilidad y Alianzas</h3>
                 </a>
                 <p>
-                  Impulsamos iniciativas que promueven la sostenibilidad
-                  ambiental y el bienestar social en línea con los ODS 2030.
-                </p>
-              </div>
-            </div>
-            <!-- End Service Item -->
-
-            <div
-              class="col-lg-3 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="500"
-            >
-              <div class="service-item item-pink position-relative">
-                <div class="icon">
-                  <i class="bi bi-award"></i>
-                </div>
-                <a href="service-details.html" class="stretched-link">
-                  <h3>Certificación por Competencias</h3>
-                </a>
-                <p>
-                  Validamos y certificamos las competencias laborales adquiridas
-                  a través de la experiencia, mejorando las oportunidades de
-                  empleo.
+                  Proyectos sostenibles, alianzas estratégicas y presencia territorial para el desarrollo comunitario.
                 </p>
               </div>
             </div>
@@ -301,212 +274,106 @@
       </section>
       <!-- /Featured Services Section -->
 
-      <!-- About Section -->
-      <section id="about" class="about section light-background">
+
+      <!-- /Objetivos Estratégicos y Ejes de Acción -->
+
+      <!-- Nuestro Enfoque -->
+      <section id="enfoque" class="section light-background">
         <div class="container">
-          <div class="row gy-4">
-            <div
-              class="col-lg-6 position-relative align-self-start"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <video width="100%" height="auto" controls>
-                <source src="assets/videos/intro.mp4" type="video/mp4" />
-                Tu navegador no soporta la etiqueta de video.
+          <div class="row mb-5">
+            <div class="col-lg-7">
+              <video controls  style="width:100%; border-radius:10px;">
+                <source src="assets/videos/intro.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
               </video>
             </div>
-            <div
-              class="col-lg-6 content"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <div class="col-lg-5 d-flex flex-column justify-content-center">
               <h3>Impulsando Emprendimientos para un Futuro Sostenible</h3>
-              <p class="fst-italic">
-                En FUDEMPRE, trabajamos para promover la inclusión financiera y
-                fortalecer el desarrollo económico sostenible en comunidades
-                vulnerables.
-              </p>
-              <ul>
-                <li>
-                  <i class="bi bi-check2-all"></i>
-                  <span
-                    >Fomentamos el emprendimiento como motor de cambio y
-                    progreso social.</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check2-all"></i>
-                  <span
-                    >Ofrecemos capacitación en liderazgo, finanzas y habilidades
-                    empresariales.</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check2-all"></i>
-                  <span
-                    >Promovemos la igualdad de oportunidades y la sostenibilidad
-                    ambiental.</span
-                  >
-                </li>
-              </ul>
               <p>
-                Nuestra misión es empoderar a mujeres, jóvenes y comunidades,
-                proporcionándoles las herramientas necesarias para crear un
-                impacto positivo en sus vidas y entornos. Trabajamos en línea
-                con los Objetivos de Desarrollo Sostenible (ODS) 2030,
-                priorizando la equidad, la inclusión y el crecimiento económico
-                sostenible.
+                En FUDEMPRE trabajamos para promover la inclusión financiera, fortalecer el desarrollo económico comunitario y fomentar la sostenibilidad.<br>
+                <ul>
+                  <li>Formación en emprendimientos con enfoque de derechos y progreso social.</li>
+                  <li>Ofrecemos capacitación en economía, finanzas y habilidades emprendedoras.</li>
+                  <li>Promovemos el apoyo productivo y la asociatividad.</li>
+                  <li>Trabajamos en alianza con actores públicos y privados para el desarrollo local.</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-center mb-4">Nuestro Enfoque</h2>
+
+          <div class="row align-items-center mb-5" data-aos="fade-up">
+            <div class="col-md-6 d-flex justify-content-center">
+              <img src="assets/img/QuienesSomos.jpg" alt="Capacitación y Educación" class="img-fluid rounded shadow" style="object-fit:cover;">
+            </div>
+            <div class="col-md-6">
+              <h4>Capacitación y Educación</h4>
+              <p>
+                Programas educativos que potencian habilidades emprendedoras y personales.
+                <ul>
+                  <li>Formación técnica, participación financiera y emprendimiento social.</li>
+                  <li>Desarrollo de competencias para la autogestión y el crecimiento personal.</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+
+          <div class="row align-items-center mb-5 flex-md-row-reverse" data-aos="fade-up">
+            <div class="col-md-6 d-flex justify-content-center">
+              <img src="assets/img/InclusiónFinanciera.jpg" alt="Inclusión Financiera" class="img-fluid rounded shadow" style=" object-fit:cover;">
+            </div>
+            <div class="col-md-6">
+              <h4>Inclusión Financiera</h4>
+              <p>
+                Facilitamos el acceso a servicios financieros para fomentar la autonomía económica.
+                <ul>
+                  <li>Educación financiera y acompañamiento para proyectos productivos.</li>
+                  <li>Creación de fondos de apoyo para mujeres y jóvenes emprendedores.</li>
+                  <li>Asesoramiento en acceso a microcréditos y herramientas financieras.</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+
+          <div class="row align-items-center mb-5" data-aos="fade-up">
+            <div class="col-md-6 d-flex justify-content-center">
+              <img src="assets/img/CompromisoSostenibilidad.jpg" alt="Compromiso con la Sostenibilidad" class="img-fluid rounded shadow" style=" object-fit:cover;">
+            </div>
+            <div class="col-md-6">
+              <h4>Compromiso con la Sostenibilidad</h4>
+              <p>
+                Implementamos programas alineados a los Objetivos de Desarrollo Sostenible (ODS), asegurando un impacto positivo ambiental, social y comunitario.
+                <ul>
+                  <li>Fomento de la economía circular y negocios locales.</li>
+                  <li>Apoyo a proyectos de agricultura sostenible y desarrollo económico.</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+
+          <div class="row align-items-center mb-5 flex-md-row-reverse" data-aos="fade-up">
+            <div class="col-md-6 d-flex justify-content-center">
+              <img src="assets/img/AlianzasEstrategicas.jpg" alt="Alianzas Estratégicas" class="img-fluid rounded shadow" style=" object-fit:cover;">
+            </div>
+            <div class="col-md-6">
+              <h4>Alianzas Estratégicas</h4>
+              <p>
+                Generamos alianzas con organizaciones locales e internacionales para maximizar el impacto social.
+                <ul>
+                  <li>Colaboración con instituciones públicas, privadas y comunitarias.</li>
+                  <li>Desarrollo de proyectos conjuntos para la inclusión y sostenibilidad.</li>
+                </ul>
               </p>
             </div>
           </div>
         </div>
       </section>
-      <!-- /About Section -->
-
-      <!-- Features Section -->
-      <section id="features" class="features section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Nuestro Enfoque</h2>
-          <p>
-            Descubre cómo trabajamos para empoderar a comunidades y promover el
-            desarrollo sostenible.
-          </p>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container">
-          <div class="row gy-4 align-items-center features-item">
-            <div
-              class="col-md-5 d-flex align-items-center"
-              data-aos="zoom-out"
-              data-aos-delay="100"
-            >
-              <img src="assets/img/InclusiónFinanciera.jpg" class="img-fluid" alt="" />
-            </div>
-            <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
-              <h3>Inclusión Financiera</h3>
-              <p class="fst-italic">
-                Facilitamos acceso a herramientas financieras para fomentar la
-                autonomía económica.
-              </p>
-              <ul>
-                <li>
-                  <i class="bi bi-check"></i>
-                  <span
-                    >Capacitaciones en gestión económica para pequeños
-                    negocios.</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check"></i>
-                  <span
-                    >Creación de redes de apoyo para mujeres
-                    emprendedoras.</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check"></i>
-                  <span
-                    >Asesoramiento en acceso a microcréditos y
-                    financiamiento.</span
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- Features Item -->
-
-          <div class="row gy-4 align-items-center features-item">
-            <div
-              class="col-md-5 order-1 order-md-2 d-flex align-items-center"
-              data-aos="zoom-out"
-              data-aos-delay="200"
-            >
-              <img src="assets/img/CapacitaciónyEducación.jpg" class="img-fluid" alt="" />
-            </div>
-            <div
-              class="col-md-7 order-2 order-md-1"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <h3>Capacitación y Educación</h3>
-              <p class="fst-italic">
-                Proporcionamos programas educativos que potencian habilidades
-                empresariales y personales.
-              </p>
-              <p>
-                Ofrecemos talleres en liderazgo, planificación financiera y
-                emprendimientos sostenibles. Nuestros programas están diseñados
-                para fomentar la autosuficiencia y el crecimiento personal.
-              </p>
-            </div>
-          </div>
-          <!-- Features Item -->
-
-          <div class="row gy-4 align-items-center features-item">
-            <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
-              <img src="assets/img/CompromisoSostenibilidad.jpg" class="img-fluid" alt="" />
-            </div>
-            <div class="col-md-7" data-aos="fade-up">
-              <h3>Compromiso con la Sostenibilidad</h3>
-              <p>
-                Implementamos proyectos alineados con los Objetivos de
-                Desarrollo Sostenible (ODS), asegurando un impacto positivo en
-                el medio ambiente y las comunidades.
-              </p>
-              <ul>
-                <li>
-                  <i class="bi bi-check"></i>
-                  <span
-                    >Promoción de prácticas empresariales responsables.</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check"></i>
-                  <span
-                    >Fomento de la economía circular en negocios locales.</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check"></i>
-                  <span
-                    >Apoyo a proyectos que integren sostenibilidad y desarrollo
-                    económico.</span
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- Features Item -->
-
-          <div class="row gy-4 align-items-center features-item">
-            <div
-              class="col-md-5 order-1 order-md-2 d-flex align-items-center"
-              data-aos="zoom-out"
-            >
-              <img src="assets/img/AlianzasEstrategicas.jpg" class="img-fluid" alt="" />
-            </div>
-            <div class="col-md-7 order-2 order-md-1" data-aos="fade-up">
-              <h3>Alianzas Estratégicas</h3>
-              <p class="fst-italic">
-                Colaboramos con organizaciones locales e internacionales para
-                maximizar el impacto social.
-              </p>
-              <p>
-                Creamos redes de colaboración que fortalecen iniciativas
-                comunitarias y proyectos de alto impacto, asegurando resultados
-                sostenibles y escalables.
-              </p>
-            </div>
-          </div>
-          <!-- Features Item -->
-        </div>
-      </section>
-      <!-- /Features Section -->
+      <!-- /Nuestro Enfoque -->
     </main>
 
     <footer id="footer" class="footer dark-background">
+      <footer id="footer" class="footer dark-background">
       <div class="container footer-top">
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6 footer-about">
@@ -514,11 +381,9 @@
               <span class="sitename">FUDEMPRE</span>
             </a>
             <div class="footer-contact pt-3">
-              <p>
-                <strong>Dirección:</strong> Calle Principal #123, Quito, Ecuador
-              </p>
-              <p><strong>Teléfono:</strong> +593 987654321</p>
-              <p><strong>Email:</strong> info@fundempreecuador.org</p>
+              <p><strong>Dirección:</strong> Guano, Riobamba, Ecuador</p>
+              <p><strong>Teléfono:</strong> +593 99 736 7905</p>
+              <p><strong>Email:</strong>  emprenderynodepender@gmail.com </p>
             </div>
           </div>
 
@@ -539,7 +404,7 @@
               </li>
               <li>
                 <i class="bi bi-chevron-right"></i>
-                <a href="contact.html">Contacto</a>
+                <a href="contact.html">Contáctanos</a>
               </li>
             </ul>
           </div>
@@ -573,7 +438,7 @@
             </p>
             <div class="social-links d-flex">
               <a
-                href="https://www.facebook.com/profile.php?id=61550647402380"
+                href="https://www.facebook.com/Fundacion.Emprender.y.No.Depender"
                 class="facebook"
                 target="_blank"
                 ><i class="bi bi-facebook"></i
@@ -619,7 +484,7 @@
       <div class="popup-contenido">
         <button class="cerrar-popup" onclick="cerrarPopup()">×</button>
         <img
-          src="assets/img/publicidad/PostInformativoEjemplo.png"
+          src="assets/img/publicidad/publicidadAgosto.png"
           alt="Publicidad FUDEMPRE"
         />
       </div>
@@ -636,5 +501,35 @@
         document.getElementById("popup-publicidad").style.display = "none";
       }
     </script>
+    
+    
+    <script>
+    function loadChatScript() {
+        var chatID = '66c077e9-79ee-4aa6-aa03-aa79fde8492c';
+        var script = document.createElement('script');
+        script.src = "https://doko-ai.com/api/chatbot/embed?chatbotId=" + chatID;
+        document.body.appendChild(script);
+    }
+    loadChatScript();
+</script>
+    
+
+
+    <!-- AOS.js y su CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true, duration: 900 });
+    </script>
   </body>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+
 </html>

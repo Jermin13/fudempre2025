@@ -23,7 +23,7 @@
   --heading-color: #8c99eb; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #68a4c4; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --contrast-color: #333333; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -380,6 +380,7 @@ h6 {
     visibility: visible;
   }
 }
+
 
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
@@ -859,7 +860,7 @@ section,
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: 80vh;
+  min-height: 110vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -874,11 +875,14 @@ section,
   top: 0;
   width: 130%;
   height: 95%;
-  background: linear-gradient(to right, color-mix(in srgb, var(--background-color), transparent 90%), var(--background-color)), url("../img/hero-bg.jpg") center top no-repeat;
+  /* Degradado de morado suave a morado oscuro SEMITRANSPARENTE para que se vea la imagen */
+  background: linear-gradient(to right, rgba(112, 108, 183, 0.7) 0%, rgba(128, 0, 255, 0.7) 100%), url("../img/hero-bg.jpg") center top no-repeat;
   background-size: cover;
   z-index: 0;
   border-radius: 0 0 50% 50%;
   transform: translateX(-50%) rotate(0deg);
+  filter: blur(5px); /* Aplica el efecto borroso */
+
 }
 
 .hero::before {
@@ -899,9 +903,8 @@ section,
   position: absolute;
   inset: 0;
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  /* Centra la imagen si es necesario */
+  object-fit: contain; /* Para que no se recorte */
   z-index: 1;
 }
 
@@ -921,6 +924,7 @@ section,
   text-align: center;
 }
 
+
 .hero h2 {
   margin-bottom: 30px;
   font-size: 48px;
@@ -929,11 +933,26 @@ section,
   display: block;
 }
 
+.hero .carousel-container h2 {
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
 .hero p {
   width: 80%;
   margin: 0 auto 30px auto;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: color-mix(in srgb, var(--default-color), );
   animation: fadeInDown 1s both 0.2s;
+}
+
+.hero .carousel-container p {
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 28px;
+  line-height: 1.4;
+  color: #fff !important;
 }
 
 .hero .carousel-control-prev,
@@ -950,25 +969,22 @@ section,
   height: auto;
 }
 
-.hero .btn-get-started {
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 12px 32px;
-  border-radius: 50px;
-  transition: 0.5s;
-  line-height: 1;
-  margin: 10px;
-  color: var(--default-color);
-  animation: fadeInUp 1s both 0.4s;
-  border: 2px solid var(--accent-color);
+.btn-get-started {
+  background: #8b87ee; /* Lila */
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  padding: 16px 36px;
+  font-size: 22px;
+  font-weight: 600;
+  box-shadow: 0 4px 24px rgba(112, 108, 183, 0.18);
+  transition: background 0.3s, color 0.3s;
 }
 
-.hero .btn-get-started:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  text-decoration: none;
+.btn-get-started:hover,
+.btn-get-started:focus {
+  background: #a59cf5; /* Lila más claro al pasar el mouse */
+  color: #fff;
 }
 
 .hero .carousel-indicators {
@@ -1687,38 +1703,31 @@ section,
 }
 
 .services .details {
-  background: color-mix(in srgb, var(--surface-color), transparent 5%);
+  background: rgba(255,255,255,0.85); /* Blanco semitransparente */
+  border-radius: 18px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 24px rgba(43,75,140,0.08);
   position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
-  padding: 30px;
-  transition: all ease-in-out 0.3s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
   text-align: center;
-  border-radius: 8px;
-  box-shadow: 0px 0 25px rgba(0, 0, 0, 0.1);
+  z-index: 2;
 }
 
-.services .details h3 {
-  font-weight: 700;
-  margin: 10px 0 15px 0;
-  font-size: 22px;
-  transition: ease-in-out 0.3s;
+.services .service-item {
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
 }
 
-.services .details p {
-  color: color-mix(in srgb, var(--default-color), transparent 10%);
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.services .service-item:hover .details h3 {
-  color: var(--accent-color);
-}
-
-.services .service-item:hover .img img {
-  transform: scale(1.2);
+.services .service-item .img img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
 }
 
 /*--------------------------------------------------------------
@@ -2720,47 +2729,43 @@ section,
 }
 
 .popup-overlay {
+  display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  display: flex;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
 }
 
 .popup-contenido {
-  position: relative;
-  background: white;
+  background: transparent; /* Sin fondo blanco */
   padding: 0;
-  border-radius: 8px;
-  max-width: 90%;
-  max-height: 90%;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  animation: fadeIn 0.5s ease-in-out;
+  border-radius: 16px;
+  box-shadow: none; /* Sin sombra */
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .popup-contenido img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  background: transparent;
 }
 
 .cerrar-popup {
   position: absolute;
-  top: 5px;
-  right: 10px;
-  background: transparent;
+  top: 16px;
+  right: 16px;
+  background: none;
   border: none;
   font-size: 28px;
-  color: #000;
-  cursor: pointer;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  color: #fff;
+  z-index: 2;
 }
